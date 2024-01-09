@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new', as: 'register_user'
 
   resources :users, only: [:show, :create] do
+      get "/discover", to: "discover#index"
+      post "/movies", to: "movies#results"
   end
+
 end

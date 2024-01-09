@@ -1,0 +1,10 @@
+<%= button_to "Discover Top Rated Movies", "/users/#{@user_id}/movies?query=top", data: {turbo: false} %>
+
+<br/><br/>
+
+<%= form_with url: "/users/#{@user_id}/movies", method: :post, data: {turbo: false}, local: true do |form| %>
+   <%= form.label :movie_title %>
+   <%= form.text_field :movie_title %>
+   
+   <%= form.submit "Search by Movie Title" %>
+<% end %>
