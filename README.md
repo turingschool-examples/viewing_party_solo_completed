@@ -21,6 +21,6 @@ Viewing Party Solo is an application that allows users to explore movies and cre
 
 - Ruby 3.2.2
 
-- Rails 7.0.6
+- Rails 7.1.2
 
 Example wireframes to follow are found [here](https://backend.turing.edu/module3/projects/viewing_party_solo/wireframes)
