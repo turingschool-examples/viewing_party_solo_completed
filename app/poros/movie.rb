@@ -15,28 +15,48 @@ class Movie
    end
 
    def set_genres(arr)
-      arr.map { |g| g[:name]}
+      if arr
+         arr.map { |g| g[:name]}
+      else 
+         [""]
+      end
    end
 
    def set_runtime(min)
-      hours = min / 60
-      rest = (min % 60).to_s.rjust(2, "0")
-      "#{hours}:#{rest}"
+      if min
+         hours = min / 60
+         rest = (min % 60).to_s.rjust(2, "0")
+         "#{hours}:#{rest}"
+      else
+         0
+      end
    end
 
    def set_cast(cast_data)
-      cast_data.map do |cast|
-         Cast.new(cast)
+      if cast_data
+         cast_data.map do |cast|
+            Cast.new(cast)
+         end
+      else
+         [""]
       end
    end
 
    def set_reviews_count(reviews_data)
-      reviews_data.count
+      if reviews_data
+         reviews_data.count
+      else
+         0
+      end
    end
 
    def set_reviews(reviews_data)
-      reviews_data.map do |review|
-         Review.new(review)
+      if reviews_data
+         reviews_data.map do |review|
+            Review.new(review)
+         end
+      else 
+         [""]
       end
    end
 
