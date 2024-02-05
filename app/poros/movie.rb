@@ -9,8 +9,8 @@ class Movie
       @genres = set_genres(data[:genres])
       @summary = data[:overview]
       @cast = set_cast(data[:cast])
-      @total_reviews_count = set_reviews_count(data[:reviews]) # use separate endpoint
-      @reviews = set_reviews(data[:reviews]) #use separate endpoint
+      @total_reviews_count = set_reviews_count(data[:reviews])
+      @reviews = set_reviews(data[:reviews]) 
 
    end
 
