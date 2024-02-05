@@ -1,0 +1,33 @@
+<h1><%= @movie.title %></h1>
+
+<%= link_to "Back to Discover", "/users/#{@user.id}/discover" %><br/>
+
+<%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new", method: :get, data: {turbo: false} %>
+
+<h3>Movie Information</h3>
+<div id="movie_details">
+   <ul>
+      <li>Title: <%= @movie.title %></li>
+      <li>Vote Average: <%= @movie.vote_average %></li>
+      <li>Runtime: <%= @movie.runtime %></li>
+      <li>Genres: <%= @movie.genres.to_sentence %></li>
+      <li>Summary: <%= @movie.summary %></li>
+      <li>Cast: <br/>
+         <ul id="movie_cast">
+            <% @movie.cast.each do |cast| %>
+               <li><%= cast.character %> played by <%= cast.actor %></li>
+            <% end %>
+         </ul>
+      </li>
+      <li>Total Reviews: <%= @movie.total_reviews_count %></li>
+      <p>Reviews: </p>
+      <ul>
+      <% @movie.reviews.each do |review| %>
+         <li>
+            <strong>By <%= review.author %></strong><br/>
+            <p><%= review.content %></p>
+         </li>
+      <% end %>
+      </ul>
+   </ul>
+</div>

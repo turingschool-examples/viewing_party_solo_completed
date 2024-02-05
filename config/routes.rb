@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :create] do
       get "/discover", to: "discover#index"
       post "/movies", to: "movies#results"
+      get "/movies/:movie_id", to: "movies#show"
   end
 
 end

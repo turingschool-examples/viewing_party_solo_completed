@@ -18,5 +18,17 @@ class MovieService
       get_url("search/movie?query=#{title}")
    end
 
+   def get_movie_by_id(id)
+      get_url("movie/#{id}")
+   end
+
+   def get_cast_by_movie_id(movie_id)
+      get_url("movie/#{movie_id}/credits")
+   end
+
+   def get_reviews_by_movie_id(movie_id)
+      get_url("movie/#{movie_id}/reviews")
+   end
+
 
 end
